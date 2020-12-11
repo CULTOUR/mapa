@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mapa TEST</title>
+</head>
+<body>
+<style type="text/css">
+	*{
+		padding: 0;
+		margin: 0; 
+	}
+	img.hover:hover {
+		-webkit-filter:saturate(2); /* Safari 6.0 - 9.0 */
+		filter:saturate(2);
+	}
+	.relative {
+		position: relative;
+		z-index: -1;
+	} 
+	.general{
+		position: absolute;
+
+	}
+	.btnUno{
+		position: absolute;
+		left: 170px;
+		top: 589px;
+	}
+	.btnDos{
+		position: absolute;
+		left: 578px;
+		top: 611px;
+	}
+	.btnTres{
+		position: absolute;
+		left: 548px;
+		top: 709px;
+	}
+	.btnCuatro{
+		position: absolute;
+		left: 847px;
+		top: 317px;
+	}
+	.btnCinco{
+		position: absolute;
+		left: 978px;
+		top: 309px;
+	}
+	.btnSeis{
+		position: absolute;
+		left: 1089px;
+		top: 363px;
+	}
+	.btnSiete{
+		position: absolute;
+		left: 1107px;
+		top: 457px;
+	}
+	.btnOcho{
+		position: absolute;
+		left: 1249px;
+		top: 62px;
+	}
+	.btnNueve{
+		position: absolute;
+		left: 1094px;
+		top: 70px;
+	}
+	.btnDies{
+		position: absolute;
+		left: 1197px;
+		top: 79px;
+	}
+	.btnOnce{
+		position: absolute;
+		left: 1052px;
+		top: 172px;
+	}
+
+
+
+
+
+	/* The Modal (background) */
+	.modal {
+	  display: none; /* Hidden by default */
+	  position: fixed; /* Stay in place */
+	  z-index: 1; /* Sit on top */
+	  padding-top: 100px; /* Location of the box */
+	  left: 0;
+	  top: 0;
+	  width: 100%; /* Full width */
+	  height: 100%; /* Full height */
+	  overflow: auto; /* Enable scroll if needed */
+	  background-color: rgb(0,0,0); /* Fallback color */
+	  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	}
+
+	/* Modal Content */
+	.modal-content {
+	  background-color: #fefefe;
+	  margin: auto;
+	  padding: 20px;
+	  border: 1px solid #888;
+	  width: 50%;
+	  font-family: 'Montserrat-SemiBold';
+	}
+
+	/* The Close Button */
+	.close {
+	  color: #aaaaaa;
+	  float: right;
+	  font-size: 28px;
+	  font-weight: bold;
+	}
+
+	.close:hover,
+	.close:focus {
+	  color: #000;
+	  text-decoration: none;
+	  cursor: pointer;
+	}
+
+	.contenidoResponsive {
+		height: auto;
+    }
+
+
+	@font-face{
+      font-family: 'Montserrat-SemiBold';
+      src: url(./Montserrat-SemiBold.otf);
+    }
+    @font-face{
+      font-family: 'Montserrat-Light';
+      src: url(./Montserrat-Light.otf);
+    }
+</style>
+<div class="contenidoResponsive">
+	<div class="relative">
+		<img src="General.png" class="general">
+		<img src="Ovejas.png" class="btnUno hover" onmouseover="PlaySound('popSound')" 
+	        onmouseout="StopSound('popSound')" id="ovejasBtn">
+		<img src="comida.png" class="btnDos hover" onmouseover="PlaySound('popSound')" 
+	        onmouseout="StopSound('popSound')" id="lacteaBtn">
+		<img src="moto.png" class="btnTres hover" onmouseover="PlaySound('popSound')" 
+	        onmouseout="StopSound('popSound')" id="MotosBtn">
+	    <img src="comida.png" class="btnCuatro hover" onmouseover="PlaySound('popSound')" 
+	        onmouseout="StopSound('popSound')" id="ChamizaBtn">
+		<img src="edificio.png" class="btnCinco hover" onmouseover="PlaySound('popSound')" 
+	        onmouseout="StopSound('popSound')" id="EdificioBtn">
+	    <img src="estatua.png" class="btnSeis hover" onmouseover="PlaySound('popSound')" 
+	        onmouseout="StopSound('popSound')" id="EstatuaBtn">
+	    <img src="parque.png" class="btnSiete hover" onmouseover="PlaySound('popSound')" 
+	        onmouseout="StopSound('popSound')" id="ParqueBtn">
+	    <img src="manigua.png" class="btnOcho hover" onmouseover="PlaySound('popSound')" 
+	        onmouseout="StopSound('popSound')" id="ManiguaBtn">
+	    <img src="comida.png" class="btnNueve hover" onmouseover="PlaySound('popSound')" 
+	        onmouseout="StopSound('popSound')" id="TrucheraBtn">
+	    <img src="antena.png" class="btnDies hover" onmouseover="PlaySound('popSound')" 
+	        onmouseout="StopSound('popSound')" id="AntenaBtn">
+	    <img src="verde.png" class="btnOnce hover" onmouseover="PlaySound('popSound')" 
+	        onmouseout="StopSound('popSound')" id="UrbanoBtn">
+	</div>
+</div>
+
+<!-- The Modal -->
+<div id="Modal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div id="contenidoModal">
+    	
+    </div>
+  </div>
+</div>
+
+
+
+
+<audio id='popSound' src='SONIDO_MUNDOS.wav' type="audio/mpeg"/>
+
+<script type="text/javascript">
+	function PlaySound(soundobj) {
+      var thissound = document.getElementById(soundobj);
+      thissound.play();
+    }
+    function StopSound(soundobj) {
+      var thissound = document.getElementById(soundobj);
+      thissound.pause();
+      thissound.currentTime = 0;
+    }
+
+
+    // Get the modal
+	var modal = document.getElementById("Modal");
+	var contentModal = document.getElementById("contenidoModal");
+
+	// Get the button that opens the modal
+	var btnOvejas = document.getElementById("ovejasBtn");
+	var btnLactea = document.getElementById("lacteaBtn");
+	var btnMotos = document.getElementById("MotosBtn");
+	var btnChamiza = document.getElementById("ChamizaBtn");
+	var btnNovatales = document.getElementById("EdificioBtn");
+	var btnEstatua = document.getElementById("EstatuaBtn");
+	var btnParque = document.getElementById("ParqueBtn");
+	var btnManigua = document.getElementById("ManiguaBtn");
+	var btnTruchera = document.getElementById("TrucheraBtn");
+	var btnAntena = document.getElementById("AntenaBtn");
+	var btnUrbano = document.getElementById("UrbanoBtn");
+
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[0];
+
+	// When the user clicks the button, open the modal 
+	btnOvejas.onclick = function() {
+	  /*modal.style.display = "block";
+	  contentModal.innerHTML = "<h2>LLANO DE OVEJAS:</h2><br><p style=\"font-family: 'Montserrat-Light'\">Llano de Ovejas, o simplemente Ovejas, es el único corregimiento de San Pedro de los Milagros, Antioquia, Colombia.Su centro urbano dista 19 kilómetros de la cabecera urbana de San Pedro, ubicado en el extremo sur del municipio,muy cerca de la frontera que separa a este municipio con Bello, su principal actividad económica es la ganadería lechera, el cultivo de hortalizas, la porcicultura y la avicultura.</p><br><hr><br><a href=\"https://www.google.com/maps/place/Ovejas,+San+Pedro+de+los+Milagros,+Antioquia/@6.395562,-75.646445,15z/data=!4m5!3m4!1s0x8e4432402854b0f3:0x1bdd9410a0fe2062!8m2!3d6.395562!4d-75.646445\" target=\"_blank\">Ubicación</a><br><h3><b>Contacto:</b> 3017774966 (Hostal Ecológico en Llanos de ovejas)</h3>";*/
+	  window.open("https://cultour2020.wixsite.com/misitio/copia-de-cementerio-museo-san-pedro-1");
+	}
+	btnLactea.onclick = function() {
+	  /*modal.style.display = "block";
+	  contentModal.innerHTML = "<h2>PARQUE TEMÁTICO LA VÍA LÁCTEA:</h2><br><p style=\"font-family: 'Montserrat-Light'\">Paradero restaurante vía Medellín- San Pedro de los milagros, con gran vista y variedad de comida.</p><br><hr><br><a href=\"https://www.google.com/maps?client=ms-android-xiaomi-rev1&um=1&ie=UTF-8&fb=1&gl=co&entry=s&sa=X&ftid=0x8e44373dca54600b:0xe37f23e1fe99dd0f\" target=\"_blank\">Ubicación</a><br><h3><b>Contacto:</b> 320 6085129</h3>";*/
+	  window.open("https://cultour2020.wixsite.com/misitio/copia-de-represa-rio-grande-2");
+	}
+	btnMotos.onclick = function() {
+	  /*modal.style.display = "block";
+	  contentModal.innerHTML = "<h2>LLANO DE OVEJAS:</h2><br><p style=\"font-family: 'Montserrat-Light'\">Llano de Ovejas, o simplemente Ovejas, es el único corregimiento de San Pedro de los Milagros, Antioquia, Colombia.Su centro urbano dista 19 kilómetros de la cabecera urbana de San Pedro, ubicado en el extremo sur del municipio,muy cerca de la frontera que separa a este municipio con Bello, su principal actividad económica es la ganadería lechera, el cultivo de hortalizas, la porcicultura y la avicultura.</p><br><hr><br><a href=\"https://www.google.com/maps/place/Ovejas,+San+Pedro+de+los+Milagros,+Antioquia/@6.395562,-75.646445,15z/data=!4m5!3m4!1s0x8e4432402854b0f3:0x1bdd9410a0fe2062!8m2!3d6.395562!4d-75.646445\" target=\"_blank\">Ubicación</a><br><h3><b>Contacto:</b> 3017774966 (Hostal Ecológico en Llanos de ovejas)</h3>";*/
+	  window.open("https://cultour2020.wixsite.com/misitio/ruta-cuatrimotos");
+	}
+	btnChamiza.onclick = function() {
+	  /*modal.style.display = "block";
+	  contentModal.innerHTML = "<h2>LA CHAMIZA:</h2><br><p style=\"font-family: 'Montserrat-Light'\">Delicias del campo con sabor a leña, con platos como bandeja paisa, arepa de Chócolo con queso del municipio, almojabanas.</p><br><hr><br><a href=\"https://www.google.com/maps/place/Asados+La+Chamiza/@6.4469904,-75.5690124,17z/data=!3m1!4b1!4m5!3m4!1s0x8e4430d0e7b0f953:0x9f77a9acf112a3a7!8m2!3d6.4469904!4d-75.5668237\" target=\"_blank\">Ubicación</a><br><h3><b>Contacto:</b> 8686209</h3>";*/
+	  window.open("https://cultour2020.wixsite.com/misitio/copia-de-represa-rio-grande-2-1");
+	}
+	btnNovatales.onclick = function() {
+	  /*modal.style.display = "block";
+	  contentModal.innerHTML = "<h2>LOS NUTABES:</h2><br><p style=\"font-family: 'Montserrat-Light'\">La finca hotel nutabes Situado en San Pedro, Finca  Nutabes cuenta con Wi-Fi gratuita, un jardín y barbacoa. Hay una sala de juegos infantiles y fonda típica en el hotel y los huéspedes pueden disfrutar del restaurante . Hay aparcamiento privado gratuito disponible en el sitio. Finca  Nutabes también incluye una terraza.Se puede admirar el paisaje; disfrutar de las noches de estrellas; y si lo desea puedes gosar de una noche de cuentos en la chimenea de la propiedad; también puedes asistir al ordeño manual y actividades del campo;  la zona es ideal para practicar senderismo.</p><br><hr><a href=\"https://www.google.com/maps/place/Finca+Hotel+Nutabes/@6.437373,-75.5866419,17z/data=!3m1!4b1!4m8!3m7!1s0x8e443122dc98c5c3:0x20385476ea96f4a7!5m2!4m1!1i2!8m2!3d6.437373!4d-75.5844532\" target=\"_blank\">Ubicación</a><br><h3><b>Contacto:</b> 312 7101323</h3>";*/
+	  window.open("https://cultour2020.wixsite.com/misitio/los-nutabes");
+	}
+	btnEstatua.onclick = function() {
+	  /*modal.style.display = "block";
+	  contentModal.innerHTML = "<h2>MONUMENTO TIERRA NEGRA:</h2><br><p style=\"font-family: 'Montserrat-Light'\">La historia cuenta que unos vendedores itinerantes, que se dirigían hacia el Valle de Aburrá, ofrecieron la única imagen de Cristo Crucificado que les quedaba. La imagen fue expuesta en el pequeño templo parroquial. La noticia corrió y mucha gente se acercó a conocer el Crucifijo. Pidieron 300 reales por ella, pero sólo les ofrecieron 200. Al no llegar a un acuerdo, los viajeros empacaron su Cristo en una caja de madera y continuaron su camino por la vía que conducía hacia Copacabana, antiguamente llamado La Tasajera.<br>En el sitio llamado “Tierra Negra”, el carguero de la Imagen comenzó a sentir que su peso aumentaba sin motivo alguno y muy pronto se vio obligado a orillarse y descansar, pues no podía con ella. Ayudado por su compañero, trató de levantarla varias veces, pero fue imposible. Algunas personas que pasaban por allí trataron de ayudarles, y también fue inútil. Pasado un tiempo se dieron por rendidos y decidieron volver a San Pedro. Una vez emprendieron el camino de regreso, el peso de la imagen volvió a su estado inicial.<br>De esta manera, el Cristo retornó a la comunidad y fue expuesto nuevamente para su veneración. Entre las personas crecía la admiración y, al no hallar explicación de lo sucedido, tomaron lo ocurrido como un milagro: el Crucificado manifestaba con esto su voluntad de quedarse en San Pedro.<br>Inmediatamente, comienza una serie de manifestaciones celestiales por medio de la venerable imagen del Santo Cristo, “hacedor de mil maravillas; sanador de ciegos, mancos y tullidos”. Esto lleva a los habitantes de entonces a bautizarlo con el nombre del “Señor del Milagro”. Años más tarde, gracias a las numerosas bendiciones que prodigaba a sus devotos, comenzaron a llamarlo: “El Señor de los Milagros”.<br>El 14 de septiembre de 1974, día litúrgico de la Exaltación de la Santa Cruz, en el paraje “Tierra Negra” se erigió un monumento para conmemorar los doscientos años del acontecimiento y allí quedaron plasmadas estas palabras: En este paraje llamado “tierra negra” donde, hacia la segunda mitad del siglo XVIII, se verificó el milagro del Santo Crucifijo que rehusó marcharse de San Pedro. “Gracias Señor, porque os quedasteis con nosotros”.</p>";*/
+	  window.open("https://cultour2020.wixsite.com/misitio/copia-de-cementerio-museo-san-pedro-2");
+	}
+	btnParque.onclick = function() {
+	  /*modal.style.display = "block";
+	  contentModal.innerHTML = "<h2>RUTA CASCADA:</h2><br><p style=\"font-family: 'Montserrat-Light'\">Esta increíble ruta cuenta con una distancia de 4 km, la quebrada que se desprende de la cascada se llama El Hato en la vereda Monte Redondo, su grado de dificultad está catalogado en 2.5, cuenta con zona de camping y senderismo, está precisamente ubicada en el corredor vial San Pedro de los Milagros en el Cerro Quitasol. </p><br>";*/
+	  window.open("https://cultour2020.wixsite.com/misitio/las-cascadas");
+	}
+	btnManigua.onclick = function() {
+	  /*modal.style.display = "block";
+	  contentModal.innerHTML = "<h2>REPRESA RÍO GRANDE 2:</h2><br><p style=\"font-family: 'Montserrat-Light'\">Riogrande II es un gran lago artificial o embalse que con una superficie de 1100 hectáreas, es uno de los espejos de agua más extensos de Antioquia; pertenece administrativamente a la subregión Norte y específicamente a los municipios de Entrerríos, Santa Rosa de Osos, San Pedro de los Milagros y Donmatías; es alimentado por el río Grande que tributa sus aguas al norte del embalse; algunos ríos afluentes del río Grande, desembocan directamente al embalse;<br>Este lugar específicamente, por su antigüedad se encuentra naturalizado, convirtiéndose en un cuerpo de agua sumamente biodiverso y de gran importancia ecológica. Riogrande II es el cuerpo lacustre más extenso del Norte Antioqueño, siguiéndolo en extensión los embalses de Miraflores y Troneras en Carolina del Príncipe.</p><br><hr><a href=\"https://www.google.com/maps?client=ms-android-xiaomi-rev1&um=1&ie=UTF-8&fb=1&gl=co&entry=s&sa=X&ftid=0x8e4438cff9fadf7b:0x6803b09e4f3e3b2f\" target=\"_blank\">Ubicación</a>";*/
+	  window.open("https://cultour2020.wixsite.com/misitio/copia-de-cementerio-museo-san-pedro");
+	}
+	btnTruchera.onclick = function() {
+	  /*modal.style.display = "block";
+	  contentModal.innerHTML = "<h2>TRUCHERA LA CASCADA Y ESTADERO EL VIEJO:</h2><br><p style=\"font-family: 'Montserrat-Light'\">Restaurante especializado en los mejores platillos de trucha, cuenta con la experiencia de la pesca dónde puedes atrapar tu propio almuerzo.</p><br><hr><a href=\"https://www.google.com/maps?client=ms-android-xiaomi-rev1&um=1&ie=UTF-8&fb=1&gl=co&entry=s&sa=X&ftid=0x8e443798b885e1d1:0xf54ef86e4f7864e7\" target=\"_blank\">Ubicación</a><br><h3><b>Contacto:</b> 313 6968241</h3>";*/
+	  window.open("https://cultour2020.wixsite.com/misitio/truc");
+	}
+	btnAntena.onclick = function() {
+	  window.open("https://cultour2020.wixsite.com/misitio/ruta-las-antenas");
+	}
+	btnUrbano.onclick = function() {
+	  /*modal.style.display = "block";
+	  contentModal.innerHTML = "<h2>LLANO DE OVEJAS:</h2><br><p style=\"font-family: 'Montserrat-Light'\">Llano de Ovejas, o simplemente Ovejas, es el único corregimiento de San Pedro de los Milagros, Antioquia, Colombia.Su centro urbano dista 19 kilómetros de la cabecera urbana de San Pedro, ubicado en el extremo sur del municipio,muy cerca de la frontera que separa a este municipio con Bello, su principal actividad económica es la ganadería lechera, el cultivo de hortalizas, la porcicultura y la avicultura.</p><br><hr><br><a href=\"https://www.google.com/maps/place/Ovejas,+San+Pedro+de+los+Milagros,+Antioquia/@6.395562,-75.646445,15z/data=!4m5!3m4!1s0x8e4432402854b0f3:0x1bdd9410a0fe2062!8m2!3d6.395562!4d-75.646445\" target=\"_blank\">Ubicación</a><br><h3><b>Contacto:</b> 3017774966 (Hostal Ecológico en Llanos de ovejas)</h3>";*/
+	  window.open("urbano.html");
+	}
+
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+	  modal.style.display = "none";
+	}
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+	  if (event.target == modal) {
+	    modal.style.display = "none";
+	  }
+	}
+</script>
+
+</body>
+</html>

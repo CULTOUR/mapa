@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mapa TEST</title>
+</head>
+<body>
+<style type="text/css">
+	*{
+		padding: 0;
+		margin: 0; 
+	}
+	img.hover:hover {
+		-webkit-filter:saturate(2); /* Safari 6.0 - 9.0 */
+		filter:saturate(2);
+	}
+	.relative {
+		position: relative;
+		z-index: -1;
+	} 
+	.general{
+		position: absolute;
+
+	}
+	.btnUno{
+		position: absolute;
+		left: 1076px;
+		top: 220px;
+	}
+	.btnDos{
+		position: absolute;
+		left: 1133px;
+		top: 268px;
+	}
+	.btnTres{
+		position: absolute;
+		left: 1170px;
+		top: 412px;
+	}
+	.btnCuatro{
+		position: absolute;
+		left: 913px;
+		top: 411px;
+	}
+	.btnCinco{
+		position: absolute;
+		left: 822px;
+		top: 462px;
+	}
+	
+
+
+
+
+
+	/* The Modal (background) */
+	.modal {
+	  display: none; /* Hidden by default */
+	  position: fixed; /* Stay in place */
+	  z-index: 1; /* Sit on top */
+	  padding-top: 100px; /* Location of the box */
+	  left: 0;
+	  top: 0;
+	  width: 100%; /* Full width */
+	  height: 100%; /* Full height */
+	  overflow: auto; /* Enable scroll if needed */
+	  background-color: rgb(0,0,0); /* Fallback color */
+	  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	}
+
+	/* Modal Content */
+	.modal-content {
+	  background-color: #fefefe;
+	  margin: auto;
+	  padding: 20px;
+	  border: 1px solid #888;
+	  width: 50%;
+	  font-family: 'Montserrat-SemiBold';
+	}
+
+	/* The Close Button */
+	.close {
+	  color: #aaaaaa;
+	  float: right;
+	  font-size: 28px;
+	  font-weight: bold;
+	}
+
+	.close:hover,
+	.close:focus {
+	  color: #000;
+	  text-decoration: none;
+	  cursor: pointer;
+	}
+
+	.contenidoResponsive {
+		height: auto;
+    }
+
+
+	@font-face{
+      font-family: 'Montserrat-SemiBold';
+      src: url(./Montserrat-SemiBold.otf);
+    }
+    @font-face{
+      font-family: 'Montserrat-Light';
+      src: url(./Montserrat-Light.otf);
+    }
+</style>
+<div class="contenidoResponsive">
+	<div class="relative">
+		<img src="urbano.png" class="general">
+
+		
+
+		<img src="calvario.png" class="btnUno hover" onmouseover="PlaySound('popSound')" 
+	        onmouseout="StopSound('popSound')" id="calvarioBtn">
+		<img src="parqueUrbano.png" class="btnDos hover" onmouseover="PlaySound('popSound')" 
+	        onmouseout="StopSound('popSound')" id="Parque1Btn">
+		<img src="pilones.png" class="btnTres hover" onmouseover="PlaySound('popSound')" 
+	        onmouseout="StopSound('popSound')" id="PilonesBtn">
+	    <img src="principal.png" class="btnCuatro hover" onmouseover="PlaySound('popSound')" 
+	        onmouseout="StopSound('popSound')" id="principalBtn">
+		<img src="oscar.png" class="btnCinco hover" onmouseover="PlaySound('popSound')" 
+	        onmouseout="StopSound('popSound')" id="oscarBtn">
+	</div>
+</div>
+
+<!-- The Modal -->
+<div id="Modal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div id="contenidoModal"></div>
+  </div>
+</div>
+
+
+
+
+<audio id='popSound' src='SONIDO_MUNDOS.wav' type="audio/mpeg"/>
+
+<script type="text/javascript">
+	function PlaySound(soundobj) {
+      var thissound = document.getElementById(soundobj);
+      thissound.play();
+    }
+    function StopSound(soundobj) {
+      var thissound = document.getElementById(soundobj);
+      thissound.pause();
+      thissound.currentTime = 0;
+    }
+
+
+    // Get the modal
+	var modal = document.getElementById("Modal");
+	var contentModal = document.getElementById("contenidoModal");
+
+	// Get the button that opens the modal
+	var btnCalvario = document.getElementById("calvarioBtn");
+	var btnParque1 = document.getElementById("Parque1Btn");
+	var btnPilones = document.getElementById("PilonesBtn");
+	var btnPrincipal = document.getElementById("principalBtn");
+	var btnOscar = document.getElementById("oscarBtn");
+	var btnEstatua = document.getElementById("EstatuaBtn");
+	var btnParque = document.getElementById("ParqueBtn");
+	var btnManigua = document.getElementById("ManiguaBtn");
+	var btnTruchera = document.getElementById("TrucheraBtn");
+	var btnAntena = document.getElementById("AntenaBtn");
+	var btnUrbano = document.getElementById("UrbanoBtn");
+
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[0];
+
+	// When the user clicks the button, open the modal 
+	btnCalvario.onclick = function() {
+	  window.open("https://cultour2020.wixsite.com/misitio/sitio-2");
+	}
+	btnParque1.onclick = function() {
+		window.open("https://cultour2020.wixsite.com/misitio/sitio-3");
+	}
+	btnPilones.onclick = function() {
+	  window.open("https://cultour2020.wixsite.com/misitio/pilones");
+	}
+	btnPrincipal.onclick = function() {
+	  window.open("https://cultour2020.wixsite.com/misitio/sitio-1");
+	}
+	btnOscar.onclick = function() {
+	  window.open("https://cultour2020.wixsite.com/misitio/el-o");
+	}
+
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+	  modal.style.display = "none";
+	}
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+	  if (event.target == modal) {
+	    modal.style.display = "none";
+	  }
+	}
+</script>
+
+</body>
+</html>
