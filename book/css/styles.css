@@ -1,0 +1,118 @@
+*{
+	padding: 0;
+	margin: 0;
+	color: #845228;
+}
+body{
+	background: #1B1B1B;
+	overflow-x: auto;
+}
+h1{
+	font-family: 'KAISG';
+	font-size: 50px;
+}
+h3{
+	font-family: 'KAISG';
+	font-size: 50px;
+}
+p{
+	font-family: 'Charm-Regular';
+	margin-top: 10px;
+	font-size: 90%;
+	text-align: justify;
+}
+.ilustracion{
+	width: 55%;
+	margin: 1% 15%;
+}
+
+.container, .book-content{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.container{
+	width: 100%;
+	height: 100vh;
+	
+}
+.book-content{
+	width: 65%;
+	min-width: 250px;
+	max-width: 400px;
+	height: 330px;
+	position: relative;
+	perspective: 1000px;
+	transition: 1s;
+}
+.book{
+	position: absolute;
+	width: 80vh;
+	height:70vh;
+	transition: 1s;
+	transform-style: preserve-3d;
+	transform-origin: left; 
+}
+.face-front, .face-back{
+	width: 100%;
+	height: 100%;
+	background: url('../img/bg1.png');
+	background-size: cover;
+	padding: 52px;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.face-front{
+	box-shadow: inset 3px 0px 20px -7px black;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+.face-back{
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: translateZ(-1px) rotateY(180deg);
+	box-shadow: inset -3px 1px 20px -7px black;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+#portada{
+	background: url('../img/Portada.png');
+}
+#portada-back{
+	background: url('../img/Contraportada.png');
+}
+#portada, #portada-back{
+	background-size: 100% 100%;
+}
+
+/* Clases que se agregaran con Javascript */
+
+.trnsf{
+	transform: translateX(75%);
+}
+.trnsf-reset{
+	transform: translateX(0px);
+}
+
+/* @media para hacer el texto responsivo */
+
+@media screen and (max-width: 800px){
+	p{
+		/*font-size: 12px;*/
+	}
+	.book{
+		width: 53vh;
+        height: 61vh;
+	}
+}
+
+@font-face{
+    font-family: 'Charm-Regular';
+    src: url(./Charm-Regular.ttf);
+}
+
+@font-face{
+    font-family: 'KAISG';
+    src: url(./KAISG.ttf);
+}
