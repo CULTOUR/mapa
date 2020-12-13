@@ -76,6 +76,11 @@
 		left: 1052px;
 		top: 172px;
 	}
+	.btnDoce{
+		position: absolute;
+		left: 10px;
+		top: 10px;
+	}
 
 
 
@@ -160,6 +165,8 @@
 	        onmouseout="StopSound('popSound')" id="AntenaBtn">
 	    <img src="verde.png" class="btnOnce hover" onmouseover="PlaySound('popSound')" 
 	        onmouseout="StopSound('popSound')" id="UrbanoBtn">
+	    <img src="logo.png" class="btnDoce hover" onmouseover="PlaySound('popSound')" 
+	        onmouseout="StopSound('popSound')" id="LogoBtn">
 	</div>
 </div>
 
@@ -207,6 +214,7 @@
 	var btnTruchera = document.getElementById("TrucheraBtn");
 	var btnAntena = document.getElementById("AntenaBtn");
 	var btnUrbano = document.getElementById("UrbanoBtn");
+	var btnLogo = document.getElementById("LogoBtn");
 
 	// Get the <span> element that closes the modal
 	var span = document.getElementsByClassName("close")[0];
@@ -264,6 +272,11 @@
 	  /*modal.style.display = "block";
 	  contentModal.innerHTML = "<h2>LLANO DE OVEJAS:</h2><br><p style=\"font-family: 'Montserrat-Light'\">Llano de Ovejas, o simplemente Ovejas, es el único corregimiento de San Pedro de los Milagros, Antioquia, Colombia.Su centro urbano dista 19 kilómetros de la cabecera urbana de San Pedro, ubicado en el extremo sur del municipio,muy cerca de la frontera que separa a este municipio con Bello, su principal actividad económica es la ganadería lechera, el cultivo de hortalizas, la porcicultura y la avicultura.</p><br><hr><br><a href=\"https://www.google.com/maps/place/Ovejas,+San+Pedro+de+los+Milagros,+Antioquia/@6.395562,-75.646445,15z/data=!4m5!3m4!1s0x8e4432402854b0f3:0x1bdd9410a0fe2062!8m2!3d6.395562!4d-75.646445\" target=\"_blank\">Ubicación</a><br><h3><b>Contacto:</b> 3017774966 (Hostal Ecológico en Llanos de ovejas)</h3>";*/
 	  window.open("urbano.html");
+	}
+	btnLogo.onclick = function() {
+	  /*modal.style.display = "block";
+	  contentModal.innerHTML = "<h2>LLANO DE OVEJAS:</h2><br><p style=\"font-family: 'Montserrat-Light'\">Llano de Ovejas, o simplemente Ovejas, es el único corregimiento de San Pedro de los Milagros, Antioquia, Colombia.Su centro urbano dista 19 kilómetros de la cabecera urbana de San Pedro, ubicado en el extremo sur del municipio,muy cerca de la frontera que separa a este municipio con Bello, su principal actividad económica es la ganadería lechera, el cultivo de hortalizas, la porcicultura y la avicultura.</p><br><hr><br><a href=\"https://www.google.com/maps/place/Ovejas,+San+Pedro+de+los+Milagros,+Antioquia/@6.395562,-75.646445,15z/data=!4m5!3m4!1s0x8e4432402854b0f3:0x1bdd9410a0fe2062!8m2!3d6.395562!4d-75.646445\" target=\"_blank\">Ubicación</a><br><h3><b>Contacto:</b> 3017774966 (Hostal Ecológico en Llanos de ovejas)</h3>";*/
+	  window.open("https://cultour2020.wixsite.com/misitio");
 	}
 
 	// When the user clicks on <span> (x), close the modal
